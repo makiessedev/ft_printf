@@ -2,6 +2,8 @@
 
 A partial reimplementation of the printf in C. Handles only the following conversions.
 
+## 💡 Made with ❤️, coffee & bugs
+
 | Conversion | Short Description                                                                             |
 |------------|-----------------------------------------------------------------------------------------------|
 | %c         | Print a single character.                                                                     |
@@ -13,3 +15,5 @@ A partial reimplementation of the printf in C. Handles only the following conver
 | %x         | Print a number in hexadecimal (base 16), with lowercase.                                      |
 | %X         | Print a number in hexadecimal (base 16), with uppercase.                                      |
 | %%         | Print a percent sign.                                                                         |
+
+## 💡 Made with ❤️, coffee & bugs
