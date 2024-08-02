@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 04:11:14 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/02 05:26:40 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/02 06:18:27 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -15,9 +15,9 @@ static void	ft_switch(char type, va_list *arg, int *len, int *count);
 
 int	ft_printf(const char *placeholder, ...)
 {
+	int		count;
+	int		len;
 	va_list	args;
-	int	count;
-	int	len;
 
 	len = 0;
 	count = 0;
@@ -40,7 +40,7 @@ int	ft_printf(const char *placeholder, ...)
 	return (len);
 }
 
-static void     ft_switch(char type, va_list *arg, int *len, int *count)
+static void	ft_switch(char type, va_list *arg, int *len, int *count)
 {
 	if (type == 'c')
 	{

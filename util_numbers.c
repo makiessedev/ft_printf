@@ -6,22 +6,19 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 02:45:47 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/02 05:18:24 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/02 06:29:35 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
 int	ft_putnbr_decimal(int n)
 {
-	int	len;
+	int		len;
 	char	num;
 
 	len = 0;
 	if (n == -2147483648)
-	{
 		len = ft_putstr("-2147483648");
-	}
 	else if (n == 0)
 	{
 		ft_putchar('0');
@@ -30,10 +27,9 @@ int	ft_putnbr_decimal(int n)
 	else if (n < 0)
 	{
 		ft_putchar('-');
-		len++;
-		len += ft_putnbr_decimal(n * - 1);
+		len += ft_putnbr_decimal(n * -1) + 1;
 	}
-	else 
+	else
 	{
 		if (n >= 10)
 			len += ft_putnbr_decimal(n / 10);
@@ -44,16 +40,16 @@ int	ft_putnbr_decimal(int n)
 	return (len);
 }
 
-int     ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_unsigned(unsigned int n)
 {
-        int     len;
+	int	len;
 
-        len = 0;
-        if (n >= 10)
-                len += ft_putnbr_unsigned(n / 10);
-        len++;
-        ft_putchar(n % 10 + '0');
-        return (len);
+	len = 0;
+	if (n >= 10)
+		len += ft_putnbr_unsigned(n / 10);
+	len++;
+	ft_putchar(n % 10 + '0');
+	return (len);
 }
 
 int	ft_puthex(unsigned int n, char lower_upper)
@@ -68,8 +64,6 @@ int	ft_puthex(unsigned int n, char lower_upper)
 		hex_digits = "0123456789abcdef";
 	else if (lower_upper == 'X')
 		hex_digits = "0123456789ABCDEF";
-	else
-		return (0);
 	if (n == 0)
 	{
 		ft_putchar('0');
