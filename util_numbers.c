@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 02:45:47 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/02 03:03:42 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/02 05:18:24 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int	ft_puthex(unsigned int n, char lower_upper)
 	char	digit[25];
 
 	len = 0;
-	if (lower_upper = 'x')
+	if (lower_upper == 'x')
 		hex_digits = "0123456789abcdef";
-	else if (lower_upper = 'X')
-		hex_digits = "0123456789abcdef";
+	else if (lower_upper == 'X')
+		hex_digits = "0123456789ABCDEF";
 	else
 		return (0);
 	if (n == 0)
