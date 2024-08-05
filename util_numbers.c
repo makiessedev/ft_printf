@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 02:45:47 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/02 06:29:35 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:06:43 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -90,12 +90,12 @@ int	ft_putpointer(size_t n)
 
 	len = 2;
 	hex_digits = "0123456789abcdef";
-	ft_putstr("0x");
 	if (n == 0)
-	{
-		ft_putchar('0');
-		return (++len);
-	}
+        {
+                ft_putstr("(nil)");
+                return (5);
+        }
+	ft_putstr("0x");
 	count = 0;
 	while (n != 0)
 	{
