@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 04:11:14 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/05 15:24:11 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:32:39 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -62,10 +62,7 @@ static void	ft_switch(char type, va_list *arg, int *len, int *count)
 	else if (type == 'X')
 		*len += ft_puthex(va_arg(*arg, unsigned int), 'X');
 	else if (type == '%')
-	{
-		write(1, "%", 1);
-		(*len)++;
-	}
+		*len += ft_putpercent();
 	else
 		(*count)--;
 }
