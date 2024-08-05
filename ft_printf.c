@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 04:11:14 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/05 12:19:34 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:24:11 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -24,7 +24,7 @@ int	ft_printf(const char *placeholder, ...)
 	va_start(args, placeholder);
 	while (placeholder[count])
 	{
-		if (placeholder[count] == '%' && placeholder[count + 1] != '%')
+		if (placeholder[count] == '%')
 		{
 			count++;
 			ft_switch(placeholder[count], &args, &len, &count);
@@ -61,6 +61,11 @@ static void	ft_switch(char type, va_list *arg, int *len, int *count)
 		*len += ft_puthex(va_arg(*arg, unsigned int), 'x');
 	else if (type == 'X')
 		*len += ft_puthex(va_arg(*arg, unsigned int), 'X');
+	else if (type == '%')
+	{
+		write(1, "%", 1);
+		(*len)++;
+	}
 	else
 		(*count)--;
 }
