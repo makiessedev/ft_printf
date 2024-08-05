@@ -6,7 +6,7 @@
 /*   By: mmorais <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 02:45:47 by mmorais           #+#    #+#             */
-/*   Updated: 2024/08/02 04:54:15 by mmorais          ###   ########.fr       */
+/*   Updated: 2024/08/05 12:25:23 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -19,6 +19,12 @@ void	ft_putchar(char c)
 int	ft_putstr(char *str)
 {
 	int	len;
+	
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 
 	len = 0;
 	while (str[len])
